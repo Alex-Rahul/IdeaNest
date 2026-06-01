@@ -1,0 +1,28 @@
+[
+  {
+    "model": "ideas.idea",
+    "pk": 1,
+    "fields": {
+      "title": "AI Startup",
+      "description": "An AI-powered idea manager",
+      "submitted_at": "2026-05-31T12:00:00Z"
+    }
+  },
+  {
+    "model": "ideas.ideacategory",
+    "pk": 1,
+    "fields": {
+      "name": "Technology",
+      "idea": 1
+    }
+  },
+  {
+    "model": "ideas.ideavote",
+    "pk": 1,
+    "fields": {
+      "voter": "Rahul",
+      "vote": true,
+      "idea": 1
+    }
+  }
+]

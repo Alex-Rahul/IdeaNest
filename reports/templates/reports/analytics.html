@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IdeaNest Reports</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Global Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <!-- <img src="{% static 'images/logo.png' %}" alt="IdeaNest Logo"> -->
+            <span class="brand">IDEA_Nest</span>
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/ideas/">Ideas</a></li>
+            <li><a href="/dashboard/">Dashboard</a></li>
+            <li><a href="/reports/">Reports</a></li>
+            <li><a href="/chatbot/">Chatbot</a></li>
+        </ul>
+    </div>
+
+    <!-- Reports Section -->
+    <div class="reports-container">
+        <h2 class="reports-title">📊 Default IdeaNest Reports</h2>
+        {% for report in reports %}
+            <div class="report-card">{{ report }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+</body>
+</html>

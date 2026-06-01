@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="reports-container">
+    <h2 class="reports-title">💡 All Ideas</h2>
+    <ul class="idea-list">
+        {% for idea in ideas %}
+            <li class="idea-item">
+                <a href="{% url 'idea_detail' idea.id %}">{{ idea.title }}</a>
+            </li>
+        {% empty %}
+            <!-- Default ideas when DB is empty -->
+            <li class="idea-item"><strong>AI‑Powered Note App</strong> – Smart summaries and reminders.</li>
+            <li class="idea-item"><strong>Smart Farming Dashboard</strong> – IoT sensors + analytics for crops.</li>
+            <li class="idea-item"><strong>E‑Commerce Clone</strong> – Amazon‑style store with MERN stack.</li>
+            <li class="idea-item"><strong>Online Learning Platform</strong> – Interactive courses with quizzes.</li>
+            <li class="idea-item"><strong>Travel Planner</strong> – Personalized itineraries with budget optimization.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

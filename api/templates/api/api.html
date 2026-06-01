@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="api-section">
+    <h2 class="api-title">⚡ API Playground ⚡</h2>
+    <p class="api-subtitle">Experiment with endpoints in a neon‑lit console</p>
+
+    <div class="api-console">
+        <div class="endpoint-card">
+            <h3>/ideas</h3>
+            <p>Fetch all creative ideas</p>
+            <button class="btn-glow">Try It</button>
+        </div>
+
+        <div class="endpoint-card">
+            <h3>/reports</h3>
+            <p>Generate analytics instantly</p>
+            <button class="btn-glow">Run</button>
+        </div>
+
+        <div class="endpoint-card">
+            <h3>/chatbot</h3>
+            <p>Talk with the AI assistant</p>
+            <button class="btn-glow">Chat</button>
+        </div>
+
+        <div class="endpoint-card">
+            <h3>/notifications</h3>
+            <p>Stream live system alerts</p>
+            <button class="btn-glow">Subscribe</button>
+        </div>
+    </div>
+</section>
+{% endblock %}

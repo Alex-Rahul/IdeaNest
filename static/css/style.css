@@ -1,0 +1,499 @@
+/* Global reset */
+/* Dark background with animated aqua dots */
+body {
+    background: #000; /* solid black */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* behind everything */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nav items */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+.navbar a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.navbar a:hover {
+    color: #00ffff; /* Neon hover effect */
+}
+
+
+/* Container home.html */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* Dashboard panels */
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.panel {
+    background: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1 1 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+.panel h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #00ffff;
+}
+.panel p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+
+/* Logo section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.logo img {
+    height: 40px;
+    width: 40px;
+}
+.logo .brand {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00ffff; /* Neon accent */
+}
+
+
+
+/* API Section */
+.api-section {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+.api-title {
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.api-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.api-console {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.endpoint-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #00ffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.endpoint-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00ffff;
+}
+
+.btn-glow {
+    background: #00ffff;
+    color: #000;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-glow:hover {
+    background: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+/* Login Section */
+.login-section {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    color: #00ffff;
+}
+
+.login-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    border-radius: 6px;
+    background: #111;
+    color: #00ffff;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.login-form input:focus {
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background: #00ffff;
+    border: none;
+    border-radius: 6px;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form button:hover {
+    background: #0ff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+
+
+.btn-glow {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: #00ffff;
+    color: #000;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-glow:hover {
+    background: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+.alt-login {
+    margin-top: 2rem;
+}
+.btn-alt {
+    background: transparent;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 0.6rem 1.2rem;
+    margin: 0.3rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-alt:hover {
+    background: #00ffff;
+    color: #000;
+}
+
+.new-thread {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+.new-thread a {
+    color: #ff00ff;
+    text-decoration: none;
+}
+
+/* Ideas list */
+.idea-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.idea-item {
+    margin: 12px 0;
+    padding: 12px;
+    background: rgba(0,255,255,0.05);
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.idea-item a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.idea-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #00ffff;
+    border-color: #ff00ff;
+}
+
+
+.dashboard-panels {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.panel {
+    background: rgba(0,255,255,0.05);
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    padding: 1.5rem;
+    flex: 1 1 250px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #949c9c;
+    border-color: #ff00ff;
+}
+
+
+/* Chat container */
+.chat-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(20, 20, 30, 0.9); /* keep your default dark style */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+/* Chat window */
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #111; /* default dark background */
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+}
+
+/* User messages → white background, aligned right */
+.chat-message.user {
+    max-width: 70%;
+    margin-left: auto;
+    padding: 10px 15px;
+    background: #fff; /* white background */
+    color: #000;      /* black text */
+    border-radius: 10px 0 10px 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    text-align: right;
+}
+
+/* AI messages → default neon style, aligned left */
+.chat-message.ai {
+    max-width: 70%;
+    margin-right: auto;
+    padding: 10px 15px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    border-radius: 0 10px 10px 10px;
+    text-align: left;
+    box-shadow: 0 0 12px rgba(0,255,255,0.4);
+}
+
+/* Input bar */
+.chat-input {
+    display: flex;
+    margin-top: 15px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+}
+
+.chat-input button {
+    margin-left: 8px;
+    padding: 10px 15px;
+    background: #00ffff;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #33ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+
+
+/* Register Container */
+.register-section {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Title */
+.register-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00ffff;
+    text-shadow: 0 0 12px #00ffff;
+}
+
+/* Form Layout */
+.register-form .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 6px #00ffff;
+}
+
+/* Inputs */
+.register-form input,
+.register-form select {
+    padding: 12px;
+    border: 1px solid #00ffff;
+    border-radius: 6px;
+    background: #111;
+    color: #00ffff;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* File Upload */
+.register-form input[type="file"] {
+    border: none;
+    color: #00ffff;
+}
+
+/* Button */
+.btn-glow {
+    width: 100%;
+    padding: 12px;
+    background: #00ffff;
+    border: none;
+    border-radius: 6px;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-glow:hover {
+    background: #0ff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+
+/* ===== Reports Page ===== */
+.reports-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.report-card {
+    background: rgba(0, 255, 255, 0.05); /* translucent dark panel */
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.report-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #00ffff;
+    border-color: #ff00ff; /* glow shift on hover */
+    color: #ff00ff;        /* text glow shift */
+}
+
+.reports-title {
+    text-align: center;
+    color: #00ffff;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px #00ffff;
+}

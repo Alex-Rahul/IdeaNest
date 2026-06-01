@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="reports-container">
+    <h2 class="reports-title">{{ idea.title }}</h2>
+    <div class="report-card">
+        <p>{{ idea.description }}</p>
+    </div>
+    <a href="{% url 'idea_list' %}" class="btn-glow">⬅ Back to Ideas</a>
+</div>
+{% endblock %}

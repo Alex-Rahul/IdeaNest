@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="reports-container">
+    <h2 class="reports-title">📊 Dashboard</h2>
+
+    <div class="report-card">
+        <p>Welcome to your IdeaNest dashboard. Here you can track ideas, analytics, and notifications.</p>
+    </div>
+
+    <div class="dashboard-panels">
+        <div class="panel">
+            <h3>💡 Ideas</h3>
+            <p><a href="/ideas/" class="btn-glow" style="background-color: transparent; color: #00ffff; text-decoration: none;">Go to Ideas</a></p>
+        </div>
+        <div class="panel">
+            <h3>📈 Analytics</h3>
+            <p>Check performance and insights.</p>
+        </div>
+        <div class="panel">
+            <h3>🔔 Notifications</h3>
+            <p><button onclick="alert('Welcome to IdeaNest!')" class="btn-glow">Show Notification</button></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

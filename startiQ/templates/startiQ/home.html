@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IdeaNest Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Canvas for particle animation -->
+    <canvas id="particle-canvas"></canvas>
+
+    {% include "navbar.html" %}
+
+    <div class="container">
+        <h1>Welcome to IdeaNest</h1>
+        <p>This is your StartiQ home page.</p>
+
+        <!-- Dashboard-style cards -->
+        <div class="dashboard">
+            <div class="panel">
+                <h3>My Ideas</h3>
+                <p><a href="{% url 'idea_list' %}" style="color: #ffffff; text-decoration:none;">View all ideas</a></p>
+            </div>
+            <div class="panel">
+                <h3>Reports</h3>
+                <p><a href="/reports/" style="color: #ffffff; text-decoration: none;">Analytics & Insights</a></p>
+            </div>
+            <div class="panel">
+                <h3>Dashboard</h3>
+                <p><a href="/dashboard/" style="color: #ffffff; text-decoration: none;">Project Overview</a></p>
+            </div>
+            <div class="panel">
+                <h3>Chatbot</h3>
+                <p><a href="/chatbot/" style="color: #ffffff; text-decoration: none;">Ask AI Assistant</a></p>
+            </div>
+            <div class="panel">
+                <h3>Notifications</h3>
+                <p><a href="/notifications/" style="color: #ffffff; text-decoration: none;">Check updates</a></p>
+            </div>
+            <div class="panel">
+                <h3>API</h3>
+                <p><a href="/api/" style="color: #ffffff; text-decoration: none;">Developer Console</a></p>
+            </div>
+            <div class="panel">
+                <h3>Users</h3>
+                <p><a href="/register/" style="color: #ffffff; text-decoration: none;">Login / Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+
+    <!-- Particle animation script -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
