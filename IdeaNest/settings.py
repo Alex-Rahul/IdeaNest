@@ -129,7 +129,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]   # where your css/js live
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")     # where Django collects them
 
 
 # Default primary key field type
